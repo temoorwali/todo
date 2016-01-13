@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>todo</title>
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css"/>
+    <script src="bower_components/angular/angular.js"> </script>
+
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/angular-material/angular-material.js"></script>
+
+
+    <script src="app.js"></script>
+</head>
+
+<body ng-app="mainApp" ng-controller="ctrl1">
+
+ <form name="frm">
+
+     <md-input-container>
+         <label>Name</label>
+         <input ng-model="newItem" type="text">
+     </md-input-container>
+     <md-button class="md-button md-primary md-raised" ng-click="add()">press</md-button>
+
+ </form>
+
+
+ <div ng-repeat="name in myArray">
+
+     <md-checkbox ng-model="name.status" ng-class="Green">
+         {{name}}
+     </md-checkbox>
+
+ </div>
+
+
+
+</body>
+
+</html>
