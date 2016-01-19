@@ -3,34 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <title>todo</title>
+    <link rel="stylesheet" href="bower_components/angular-material-icons/angular-material-icons.css"/>
     <link rel="stylesheet" href="bower_components/angular-material/angular-material.css"/>
     <script src="bower_components/angular/angular.js"> </script>
 
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-aria/angular-aria.js"></script>
     <script src="bower_components/angular-material/angular-material.js"></script>
-
+    <script src="bower_components/angular-material-icons/angular-material-icons.js"></script>
 
     <script src="app.js"></script>
 </head>
 
 <body ng-app="mainApp" ng-controller="ctrl1">
+<md-toolbar layout="row">
+    <div class="md-toolbar-tools" layout-align="center">
+        <span>To do app</span>
+    </div>
+</md-toolbar>
 
- <form name="frm">
+<div layout="row" layout-align="center center">
+        <md-input-container flex="60">
+            <label>Your to do</label>
+            <input ng-model="newItem" type="text">
+        </md-input-container>
+        <md-button class="md-fab" ng-click="add()"><ng-md-icon icon="add" style="fill: white "></ng-md-icon></md-button>
 
-     <md-input-container>
-         <label>Name</label>
-         <input ng-model="newItem" type="text">
-     </md-input-container>
-     <md-button class="md-button md-primary md-raised" ng-click="add()">press</md-button>
+</div>
 
- </form>
+<div layout="row" layout-align="end center" >
+    <a href ng-click="delete()">[archive]</a>
+    <span flex-offset="20"></span>
+</div>
 
-
- <div ng-repeat="name in myArray">
-
+ <div ng-repeat="name in myArray" flex-offset-xs="5">
+     <span flex-offset-gt-sm="15" flex-offset-gt-xs="15" flex-offset-xs></span>
      <md-checkbox ng-model="name.status" ng-class="Green">
-         {{name}}
+         {{name.val}}
      </md-checkbox>
 
  </div>
